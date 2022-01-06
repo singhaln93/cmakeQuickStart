@@ -14,8 +14,10 @@ mkdir -p build && cd build &&
     make -j4                                # make VERBOSE= 1 for detailed log
     
 #clear
-#echo -e "\nTest Results..."
+# echo -e "\nTest Results..."
+# make test
+# ctest
 #./tests
 echo -e "\nOutput..."
-./CmakeProject
+./CMakeProject
 ### END ###

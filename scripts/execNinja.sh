@@ -22,5 +22,5 @@ mkdir -p build.ninja && cd build.ninja &&
 #echo -e "\nTest Results..."
 #./tests
 echo -e "\nOutput..."
-./CmakeProject
+./CMakeProject
 ### END ###

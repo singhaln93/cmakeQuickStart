@@ -1,9 +1,7 @@
 cmake_minimum_required(VERSION 3.22)
-project(CmakeProject VERSION 0.1.0)
-
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-include(CPack)
+# CMAKE_VERSION <major>.<minor>.<date>(YYMMDD) or <patch>
+project(CMakeProject VERSION 0.0.220106 LANGUAGES CXX) 
+message("-- PROJECT = ${CMAKE_PROJECT_NAME} v${CMAKE_PROJECT_VERSION}")
 
 # Set Options/FLAGS
 option(NAT_PCKG "Display packages which are natively used for the project." OFF)
@@ -15,8 +13,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Include modular cmake files
-include(scripts/cmake/catch2Test.cmake)
+#include(scripts/cmake/catch2Test.cmake)
 include(scripts/cmake/updateSubmodule.cmake)
+
+# For Catch2 Test
+# include(CTest)
+# enable_testing()
+# add_subdirectory(test)
 
 if (NAT_PCKG)
     include(scripts/cmake/nativePckg.cmake)
@@ -56,3 +59,8 @@ target_link_libraries(${PROJECT_NAME}
     PRIVATE lib 
     PRIVATE nlohmann_json::nlohmann_json
 )
+
+# For making installation files for the Project run "$cpack" in build directory
+set(CPACK_PROJECT_NAME ${PROJECT_NAME})
+set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+include(CPack)
