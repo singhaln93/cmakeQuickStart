@@ -4,8 +4,10 @@
 #!/bin/bash
 ### START ###
 cd ..
-make clean -C /build/
-rm -rf build
+make clean -C /build.gcc/
+rm -rf build.gcc
+make clean -C /build.clang/
+rm -rf build.clang
 make clean -C /build.ninja/
 rm -rf build.ninja
 clear
