@@ -32,7 +32,8 @@
 *.app
 
 # Build Directories
-build.gcc/
-build.clang/
-build.ninja/
+build.*/
+build-*/
+.build/
+build/
 .vscode/

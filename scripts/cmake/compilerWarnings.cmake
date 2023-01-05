@@ -1,8 +1,6 @@
 # Based on
 # https://github.com/lefticus/cpp_starter_project/blob/master/cmake/CompilerWarnings.cmake
 
-cmake_minimum_required(VERSION 3.22)
-
 option(${projectPrefix}WARNINGS_AS_ERRORS "Treat compiler warnings as errors"
        ON)
 
